@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Name from './Name';
+import Table from './Table'
+import Address from './Address'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import TextArea from './TextArea'
+
+class App extends React.Component {
+  submit = (values) => {
+    alert("submitted");
+    console.log(values);
+  }
+  render() {
+    return (
+      <div className="container">
+        <h3 className="jumbotron">Redux Form Validation</h3>
+        <Name onSubmit={this.submit} />
+        <Table />
+        <Address />
+        <TextArea />
+      </div>
+      
+    )
+  }
 }
 
 export default App;
